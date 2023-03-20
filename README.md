@@ -99,7 +99,7 @@ Randomize adventure generator for users searching for things to do near them or 
    => Creation
 
 ## Wireframes
-<img src="https://imgur.com/faCyf59.gif" width=600>
+![](wireframe.jpeg)
 
 ### [BONUS] Digital Wireframes & Mockups
 

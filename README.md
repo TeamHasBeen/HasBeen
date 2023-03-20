@@ -13,7 +13,7 @@ Unit 7: Group Milestone - README
 ### Description
 
 
-Randomize adventure generator for users searching for things to do near them or in a specified city. Has-Been will include features such as a personal profile, a random button generator for adventures, location services, and many others that will jump you to the most exciting and unique experience. Users can save or bookmark the results of the randomize generator button. In addition, Has-Been will allow users to share their next adventures with others by email or any other messaging service. 
+HasBeen is a random adventure generator for users searching for things to do near them or in a specified city. HasBeen will include features such as a personal profile, a random button generator for adventures, location services, and many others that will jump you to the most exciting and unique experience. Users can save or bookmark the results of the randomize generator button. In addition, HasBeen will allow users to share their next adventures with others by email or any other messaging service. 
 
 
 ### App Evaluation
@@ -37,7 +37,7 @@ Randomize adventure generator for users searching for things to do near them or 
 
 * As a user, given I am on the home screen, when I click the big randomize button then I will be taken to another page where a random city anywhere in the world will be displayed with suggested places to check out for travelers in that city.
 
-* As a user, given I have already clicked the big randomize button, when I am displayed the given location then it should be accompanied by an image of the location of the city..
+* As a user, given I have already clicked the big randomize button, when I am displayed the given location then it should be accompanied by an image of the location of the city.
 
 * As a user, given I have already clicked the big randomize button, when I am displayed the suggestions then they should be organized by some sort of standard like historical, activities, or bodies of water etc.
 
@@ -69,11 +69,11 @@ Randomize adventure generator for users searching for things to do near them or 
    * User is given randomize button
    * User clicks button to create randomized location
 * Detail
-   * User can view random city with more suggested citys for travelers
+   * User can view random city with more suggested cities for travelers
    * User can see image of the location
    * User can see suggestions are organized by a set standard (historical, activities, bodies of water, etc.)
 * Stream
-   * User can see all previosuly saved randomized locations
+   * User can see all previously saved randomized locations
 
 
 ### 3. Navigation

@@ -104,6 +104,9 @@ Randomize adventure generator for users searching for things to do near them or 
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
+![](prototype-walkthrough.gif)
+
+
 
 ## Schema 
 [This section will be completed in Unit 9]

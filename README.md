@@ -112,8 +112,125 @@ HasBeen is a random adventure generator for users searching for things to do nea
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (required by ParseObject) |
+   | createdAt     | DateTime | date when post is created (required by ParseObject)|
+   | updatedAt     | DateTime | date when post is last updated (required by ParseObject) |
+   | ACL           | ParseACL |  used to control which users can access or modify a particular ParseObject (required by ParseObject) |
+   | originalData  | Data    |  inherited from ParseObject (required by ParseObject) |
+   | username      | String   | user (required by ParseUser) |
+   | email         | String   | user email address (required by ParseUser) |
+   | emailVerified | Bool     | boolean indicating whether email is verified (required by ParseUser) |
+   | password      | String   | user password (required by ParseUser) |
+   | authData       | String Array | inherited from ParseUser (required by ParseUser) |
+
+#### Destination
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (required by ParseObject) |
+   | createdAt     | DateTime | date when post is created (required by ParseObject)|
+   | updatedAt     | DateTime | date when post is last updated (required by ParseObject) |
+   | ACL           | ParseACL |  used to control which users can access or modify a particular ParseObject (required by ParseObject) |
+   | originalData  | Data    |  inherited from ParseObject (required by ParseObject) |
+   | name          | String    |  name of destination |
+   | user          | String    |  name of user who saved the destination |
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### List of Parse network requests by screen
+   - Login Screen
+      - (Create/Post) Start new user session
+         ```swift
+         User.login(username: username, password: password) { [weak self] result in
+
+            switch result {
+            case .success(let user):
+                  print("✅ Successfully logged in as user: \(user)")
+
+                  // Post a notification that the user has successfully logged in.
+                  NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
+
+            case .failure(let error):
+                  // Show an alert for any errors
+                  self?.showAlert(description: error.localizedDescription)
+            }
+         }
+         ```
+      - (Create/POST) Create a new like on a post
+      - (Delete) Delete existing like
+   - Signup Screen
+      - (Create/POST) Create a new user object
+         ```swift
+         newUser.signup { [weak self] result in
+
+            switch result {
+            case .success(let user):
+
+                  print("✅ Successfully signed up user \(user)")
+
+                  // Post a notification that the user has successfully signed up.
+                  NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
+
+            case .failure(let error):
+                  // Failed sign up
+                  self?.showAlert(description: error.localizedDescription)
+            }
+         }
+         ```
+   - Saved Destinations (Stream) Screen
+      - (Read/GET) Query saved user destinations
+         ```swift
+         let query = Post.query()
+         query.find { [weak self] result in
+            switch result {
+            case .success(let destinations):
+               // Update the local destinations property with fetched posts
+               self?.desinations = destinations
+            case .failure(let error):
+               self?.showAlert(description: error.localizedDescription)
+            }
+
+            // Call the completion handler (regardless of error or success, this will signal the query finished)
+            // This is used to tell the pull-to-refresh control to stop refreshing
+            completion?()
+         }
+         ```
+   - Destination (Detail) Screen
+      - (Create/POST) Query saved user destinations
+         ```swift
+         // Create Post object
+         var destination = Post()
+
+         // Set properties
+         destination.name = name
+
+         // Set the user as the current user
+         destination.user = User.current
+
+         // Save destination (async)
+         destination.save { [weak self] result in
+
+            // Switch to the main thread for any UI updates
+            DispatchQueue.main.async {
+               switch result {
+               case .success(let destination):
+                  print("✅ Destination Saved! \(destination)")
+               case .failure(let error):
+                  self?.showAlert(description: error.localizedDescription)
+               }
+            }
+         }
+         ```
+#### [OPTIONAL: List endpoints if using existing API such as Yelp]
+##### Google Places API
+- Base URL - [https://maps.googleapis.com/maps/api/place](https://maps.googleapis.com/maps/api/place)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /details | get all details
+    `GET`    | details/json?placeID=placeID| return specific place by ID
+    `GET`    | /textsearch   | search for a place using plain text
+    `GET`    | /textsearch/json?query="place_name" | return placeID

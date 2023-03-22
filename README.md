@@ -115,7 +115,6 @@ HasBeen is a random adventure generator for users searching for things to do nea
 
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
 #### User
 
@@ -164,8 +163,6 @@ HasBeen is a random adventure generator for users searching for things to do nea
             }
          }
          ```
-      - (Create/POST) Create a new like on a post
-      - (Delete) Delete existing like
    - Signup Screen
       - (Create/POST) Create a new user object
          ```swift

@@ -87,16 +87,21 @@ HasBeen is a random adventure generator for users searching for things to do nea
 **Flow Navigation** (Screen to Screen)
 
 * Login Screen
-   => Creation
+   => Creation Screen
+* Login Screen
+   => Sign Up Screen
 * Sign Up Screen
-   => Creation
-* Creation
+   => Creation Screen
+* Creation Screen
    => Detail Screen
-   => Stream Screen
+* Creation Screen
+   => Stream Screen 
 * Detail Screen
-    => Creation
+    => Creation Screen
 * Stream Screen
-   => Creation
+   => Creation Screen
+* Stream Screen
+   => Detail Screen
 
 ## Wireframes
 ![](wireframe.jpeg)

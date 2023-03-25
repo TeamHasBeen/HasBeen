@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F50351729CF8C380025CBCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F50351629CF8C380025CBCA /* User.swift */; };
+		1F50351B29CF90F20025CBCA /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F50351A29CF90F20025CBCA /* Destination.swift */; };
 		CB69974E2910F705007EDA6B /* Filmotype-Jade.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB69974C2910F704007EDA6B /* Filmotype-Jade.otf */; };
 		CB6997512911044D007EDA6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6997502911044D007EDA6B /* SignUpViewController.swift */; };
 		CB6997532911354B007EDA6B /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6997522911354B007EDA6B /* CreationViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F50351629CF8C380025CBCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1F50351A29CF90F20025CBCA /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		CB69974C2910F704007EDA6B /* Filmotype-Jade.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Filmotype-Jade.otf"; sourceTree = "<group>"; };
 		CB6997502911044D007EDA6B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CB6997522911354B007EDA6B /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F50351529CF8C020025CBCA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F50351629CF8C380025CBCA /* User.swift */,
+				1F50351A29CF90F20025CBCA /* Destination.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CB13E51B2913A0E7008F45BB /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,8 @@
 		CB73D393290E3B4A00C12538 /* HasBeen */ = {
 			isa = PBXGroup;
 			children = (
+				1F50351529CF8C020025CBCA /* Models */,
+				CB6997472910E7E3007EDA6B /* Fonts */,
 				CB73D394290E3B4A00C12538 /* AppDelegate.swift */,
 				CB73D396290E3B4A00C12538 /* SceneDelegate.swift */,
 				CB13E51B2913A0E7008F45BB /* Login */,
@@ -110,7 +125,6 @@
 				CB73D39D290E3B4C00C12538 /* Assets.xcassets */,
 				CB73D39F290E3B4C00C12538 /* LaunchScreen.storyboard */,
 				CB73D3A2290E3B4C00C12538 /* Info.plist */,
-				CB6997472910E7E3007EDA6B /* Fonts */,
 			);
 			path = HasBeen;
 			sourceTree = "<group>";
@@ -201,6 +215,8 @@
 				CB6997532911354B007EDA6B /* CreationViewController.swift in Sources */,
 				CB6997512911044D007EDA6B /* SignUpViewController.swift in Sources */,
 				CB73D397290E3B4A00C12538 /* SceneDelegate.swift in Sources */,
+				1F50351B29CF90F20025CBCA /* Destination.swift in Sources */,
+				1F50351729CF8C380025CBCA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

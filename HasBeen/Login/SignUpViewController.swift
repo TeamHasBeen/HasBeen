@@ -1,10 +1,3 @@
-//
-//  SignUpViewController.swift
-//  BeReal
-//
-//  Created by David Pegg on 2/24/23.
-//
-
 import UIKit
 
 class SignUpViewController: UIViewController {
@@ -15,40 +8,6 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    
-    @IBAction func onSignUpTapped(_ sender: Any) {
-        guard let username = usernameField.text,
-              let email = emailField.text,
-              let password = passwordField.text,
-              !username.isEmpty,
-              !email.isEmpty,
-              !password.isEmpty else {
-            showMissingFieldsAlert()
-            return
-        }
-        
-        var newUser = User()
-        newUser.username = username
-        newUser.email = email
-        newUser.password = password
-        
-        newUser.signup {[weak self] result in
-            switch result{
-            case .success(let user):
-                print("✅ Successfully signed up user \(user)")
-                NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
-                
-            case .failure(let error):
-                // failed signed up
-                self?.showAlert(description: error.localizedDescription)
-            }
-        }
-        
-
-        
- 
     }
     
     private func showAlert(description: String?) {

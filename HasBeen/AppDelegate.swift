@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  MyStory
-//
-//  Created by David Pegg on 1/20/23.
-//
-
 import UIKit
 
 @main

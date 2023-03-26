@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ParseSwift
 
 class LoginViewController: UIViewController {
 
@@ -31,7 +32,7 @@ class LoginViewController: UIViewController {
             case .success(let user):
                 print("✅ Successfully logged in as user: \(user)")
                 
-                NotificationCenter.default.post(name: Notification.Name("Login"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
             case .failure(let error):
                 self?.showAlert(description: error.localizedDescription)
             }

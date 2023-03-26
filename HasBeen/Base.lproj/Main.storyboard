@@ -68,7 +68,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+<<<<<<< Updated upstream
                                                     <segue destination="D49-nA-hPQ" kind="show" id="zlX-IO-5Ln"/>
+=======
+                                                    <action selector="onLoginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0vU-Wx-1aQ"/>
+>>>>>>> Stashed changes
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -90,7 +94,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up."/>
                                         <connections>
-                                            <segue destination="Hbv-xC-mao" kind="show" id="0D8-26-Nff"/>
+                                            <segue destination="Hbv-xC-mao" kind="show" identifier="detailSegue" id="IBA-hr-7OU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,7 +145,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5pD-xS-TXs">
                                                 <rect key="frame" x="0.0" y="40.666666666666657" width="342" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZRk-ag-gPv">
                                                 <rect key="frame" x="0.0" y="86.666666666666657" width="342" height="34"/>
@@ -173,7 +177,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+<<<<<<< Updated upstream
                                                     <segue destination="D49-nA-hPQ" kind="show" id="Ni9-we-0Ws"/>
+=======
+                                                    <action selector="onSignUpTapped:" destination="Hbv-xC-mao" eventType="touchUpInside" id="6yb-4W-8Tm"/>
+>>>>>>> Stashed changes
                                                 </connections>
                                             </button>
                                         </subviews>

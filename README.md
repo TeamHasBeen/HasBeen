@@ -7,7 +7,10 @@ Unit 7: Group Milestone - README
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
+1. [Schema](#Schema)
+1. [Sprint 1 Summary](#Sprint-1-Summary)
+1. [Sprint 1 Walkthrough Gif](#Sprint-1-Walkthrough-GIF)
+
 
 ## Overview
 ### Description
@@ -31,9 +34,9 @@ HasBeen is a random adventure generator for users searching for things to do nea
 **Required Must-have Stories**
 
 
-- [ ] As a user, given it is my first time opening the app, when I open the app then I should be prompted to sign up or log in.
+- [x] As a user, given it is my first time opening the app, when I open the app then I should be prompted to sign up or log in.
 
-- [ ] As a user, given I get past the login screen, when I open the app then I should be brought to a home screen with a big clickable randomize button on the screen.
+- [x] As a user, given I get past the login screen, when I open the app then I should be brought to a home screen with a big clickable randomize button on the screen.
 
 - [ ] As a user, given I am on the home screen, when I click the big randomize button then I will be taken to another page where a random city anywhere in the world will be displayed with suggested places to check out for travelers in that city.
 
@@ -236,3 +239,9 @@ HasBeen is a random adventure generator for users searching for things to do nea
     `GET`    | details/json?placeID=placeID| return specific place by ID
     `GET`    | /textsearch   | search for a place using plain text
     `GET`    | /textsearch/json?query="place_name" | return placeID
+
+## Sprint 1 Summary
+For this sprint we we laid the groundwork of our app and implemented the login, logout, and signup features. We also made a few design changes and planned out our next sprint.
+
+## Sprint 1 Walkthrough GIF
+![](sprint-1-walkthrough.gif)

@@ -1,10 +1,3 @@
-//
-//  LoginViewController.swift
-//  BeReal
-//
-//  Created by David Pegg on 2/24/23.
-//
-
 import UIKit
 import ParseSwift
 
@@ -18,6 +11,7 @@ class LoginViewController: UIViewController {
 
     }
     
+
     @IBAction func onLoginTapped(_ sender: Any) {
         guard let username = usernameField.text,
               let password =  passwordField.text,

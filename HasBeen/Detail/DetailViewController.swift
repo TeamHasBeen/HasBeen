@@ -2,28 +2,22 @@ import UIKit
 import Nuke
 
 class DetailViewController: UIViewController, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = detailTableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailCell
-        cell.configure(image: destinationImage, description: destinationDescription, name: destination?.city)
-        return cell
-    }
-    
     
     var destination: Destination?
     var destinationImage: URL?
     var destinationDescription: String?
-    @IBOutlet weak var detailTableView: UITableView!
+    var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailTableView.dataSource = self
+        tableView.dataSource = self
         
-        print("Destination: \(String(describing: destination))")
+        // Set up activity indicator
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +26,30 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         fetchDetails()
     }
     
-    func fetchDetails() {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailCell
+        cell.configure(image: destinationImage, description: destinationDescription)
+        return cell
+    }
+    
+    private func showActivityIndicator() {
+        activityIndicator.startAnimating()
+        // Optional: Disable user interaction while loading
+        view.isUserInteractionEnabled = false
+    }
+
+    private func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
+        // Optional: Re-enable user interaction after loading
+        view.isUserInteractionEnabled = true
+    }
+    
+    private func fetchDetails() {
+        showActivityIndicator()
         guard let destinationName = destination?.city else { return }
         print(destinationName)
         
@@ -68,12 +85,12 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                    let imageURLString = image["contentUrl"] as? String,
                    let imageURL = URL(string: imageURLString),
                    let article = description["articleBody"] as? String {
-                    
+
                     DispatchQueue.main.async {
                         self?.destinationDescription = article
                         self?.destinationImage = imageURL
-                        print(article)
-                        self?.detailTableView.reloadData()
+                        self?.tableView.reloadData()
+                        self?.hideActivityIndicator()
                     }
 
                 } else {
@@ -86,7 +103,6 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         
         task.resume()
     }
+    
 }
-
-
 

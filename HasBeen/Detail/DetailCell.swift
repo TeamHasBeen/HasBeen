@@ -6,16 +6,13 @@ class DetailCell: UITableViewCell {
     @IBOutlet weak var destinationImage: UIImageView!
     @IBOutlet weak var destinationName: UILabel!
     
-    func configure(image: URL?, description: String?, name: String?) {
+    func configure(image: URL?, description: String?) {
         if let destinationDescription = description {
             self.destinationDescription.text = destinationDescription
         }
                 
         if let imageURL = image {
             Nuke.loadImage(with: imageURL, into: destinationImage)
-        }
-        if let destinationName = name {
-            self.destinationName.text = destinationName
         }
     }
     

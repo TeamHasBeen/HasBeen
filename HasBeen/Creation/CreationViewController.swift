@@ -1,16 +1,41 @@
 import UIKit
+import ParseSwift
 
 class CreationViewController: UIViewController {
-
+    
     var randomDestination: Destination?
+    private var isInitialLoad = true
+
+    @IBAction func onLogoutTapped(_ sender: Any) {
+        showConfirmLogoutAlert()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchRandomDestination()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if isInitialLoad {
+            isInitialLoad = false
+        } else {
+            fetchRandomDestination()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            if let destinationTC = segue.destination as? DetailTabBarController {
+                destinationTC.destination = self.randomDestination
+            }
+        }
+    }
+    
+    private func fetchRandomDestination() {
         let query = Destination.query()
+        
         query.find { result in
             switch result {
             case .success(let objects):
@@ -20,18 +45,6 @@ class CreationViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowDetail" {
-            if let destinationVC = segue.destination as? DetailViewController {
-                destinationVC.destination = self.randomDestination
-            }
-        }
-    }
-    
-    @IBAction func onLogoutTapped(_ sender: Any) {
-        showConfirmLogoutAlert()
     }
     
     private func showConfirmLogoutAlert() {

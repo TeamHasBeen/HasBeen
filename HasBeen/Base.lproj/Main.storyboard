@@ -391,7 +391,11 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ARB-3J-QLU" customClass="DetailTabBarController" customModule="HasBeen" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gN0-mt-uOU">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="bVn-Qw-Idz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="bVn-Qw-Idz">
+                            <connections>
+                                <action selector="didTapFavorite:" destination="ARB-3J-QLU" id="Qux-TI-qgz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eQy-xs-m2g">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

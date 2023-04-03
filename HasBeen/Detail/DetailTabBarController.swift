@@ -35,6 +35,10 @@ class DetailTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
 
+    @IBAction func didTapFavorite(_ sender: Any) {
+        // Code to save favorites goes here
+    }
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         // Do something when a tab is selected
         if viewController == self.viewControllers?[0] {

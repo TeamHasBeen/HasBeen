@@ -3,7 +3,7 @@ import UIKit
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var noDestinationsLabel: UILabel!
     private var favoriteDestinations = [Destination]()
     
     override func viewDidLoad() {

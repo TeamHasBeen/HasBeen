@@ -3,6 +3,8 @@ import MapKit
 
 class MapViewController: UIViewController {
 
+    var latitude: Double?
+    var longitude: Double?
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F50351729CF8C380025CBCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F50351629CF8C380025CBCA /* User.swift */; };
 		1F50351B29CF90F20025CBCA /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F50351A29CF90F20025CBCA /* Destination.swift */; };
+		1F6D7EA529DA3F2D001AC1BA /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D7EA429DA3F2D001AC1BA /* StreamViewController.swift */; };
+		1F6D7EA729DA3F78001AC1BA /* StreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D7EA629DA3F78001AC1BA /* StreamCell.swift */; };
 		CB69974E2910F705007EDA6B /* Filmotype-Jade.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB69974C2910F704007EDA6B /* Filmotype-Jade.otf */; };
 		CB6997512911044D007EDA6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6997502911044D007EDA6B /* SignUpViewController.swift */; };
 		CB6997532911354B007EDA6B /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6997522911354B007EDA6B /* CreationViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		1F50351629CF8C380025CBCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1F50351A29CF90F20025CBCA /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		1F6D7EA429DA3F2D001AC1BA /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
+		1F6D7EA629DA3F78001AC1BA /* StreamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamCell.swift; sourceTree = "<group>"; };
 		CB69974C2910F704007EDA6B /* Filmotype-Jade.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Filmotype-Jade.otf"; sourceTree = "<group>"; };
 		CB6997502911044D007EDA6B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CB6997522911354B007EDA6B /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 				1F50351A29CF90F20025CBCA /* Destination.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1F6D7EA329DA3ED6001AC1BA /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				1F6D7EA429DA3F2D001AC1BA /* StreamViewController.swift */,
+				1F6D7EA629DA3F78001AC1BA /* StreamCell.swift */,
+			);
+			path = Stream;
 			sourceTree = "<group>";
 		};
 		CB13E51B2913A0E7008F45BB /* Login */ = {
@@ -114,6 +127,7 @@
 		CB73D393290E3B4A00C12538 /* HasBeen */ = {
 			isa = PBXGroup;
 			children = (
+				1F6D7EA329DA3ED6001AC1BA /* Stream */,
 				1F50351529CF8C020025CBCA /* Models */,
 				CB6997472910E7E3007EDA6B /* Fonts */,
 				CB73D394290E3B4A00C12538 /* AppDelegate.swift */,
@@ -214,9 +228,11 @@
 				CB73D395290E3B4A00C12538 /* AppDelegate.swift in Sources */,
 				CB6997532911354B007EDA6B /* CreationViewController.swift in Sources */,
 				CB6997512911044D007EDA6B /* SignUpViewController.swift in Sources */,
+				1F6D7EA529DA3F2D001AC1BA /* StreamViewController.swift in Sources */,
 				CB73D397290E3B4A00C12538 /* SceneDelegate.swift in Sources */,
 				1F50351B29CF90F20025CBCA /* Destination.swift in Sources */,
 				1F50351729CF8C380025CBCA /* User.swift in Sources */,
+				1F6D7EA729DA3F78001AC1BA /* StreamCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

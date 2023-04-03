@@ -11,6 +11,8 @@
 		1F50351B29CF90F20025CBCA /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F50351A29CF90F20025CBCA /* Destination.swift */; };
 		1F6D7EA529DA3F2D001AC1BA /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D7EA429DA3F2D001AC1BA /* StreamViewController.swift */; };
 		1F6D7EA729DA3F78001AC1BA /* StreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D7EA629DA3F78001AC1BA /* StreamCell.swift */; };
+		9154B12B29DA5E6E00774A44 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9154B12A29DA5E6E00774A44 /* DetailCell.swift */; };
+		9154B12E29DA5EBB00774A44 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 9154B12D29DA5EBB00774A44 /* Nuke */; };
 		CB69974E2910F705007EDA6B /* Filmotype-Jade.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB69974C2910F704007EDA6B /* Filmotype-Jade.otf */; };
 		CB6997512911044D007EDA6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6997502911044D007EDA6B /* SignUpViewController.swift */; };
 		CB6997532911354B007EDA6B /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6997522911354B007EDA6B /* CreationViewController.swift */; };
@@ -30,6 +32,7 @@
 		1F50351A29CF90F20025CBCA /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		1F6D7EA429DA3F2D001AC1BA /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		1F6D7EA629DA3F78001AC1BA /* StreamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamCell.swift; sourceTree = "<group>"; };
+		9154B12A29DA5E6E00774A44 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		CB69974C2910F704007EDA6B /* Filmotype-Jade.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Filmotype-Jade.otf"; sourceTree = "<group>"; };
 		CB6997502911044D007EDA6B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CB6997522911354B007EDA6B /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9154B12E29DA5EBB00774A44 /* Nuke in Frameworks */,
 				CB7896EC2935A3D500635932 /* ParseSwift in Frameworks */,
 				CB7896F429361CC600635932 /* AlamofireImage in Frameworks */,
 			);
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				CBCDFAFD291144DA001F1CF1 /* DetailViewController.swift */,
+				9154B12A29DA5E6E00774A44 /* DetailCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			packageProductDependencies = (
 				CB7896EB2935A3D500635932 /* ParseSwift */,
 				CB7896F329361CC600635932 /* AlamofireImage */,
+				9154B12D29DA5EBB00774A44 /* Nuke */,
 			);
 			productName = "lab-insta-parse";
 			productReference = CB73D391290E3B4A00C12538 /* HasBeen.app */;
@@ -194,6 +200,7 @@
 			packageReferences = (
 				CB7896EA2935A3D500635932 /* XCRemoteSwiftPackageReference "Parse-Swift" */,
 				CB7896F229361CC600635932 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				9154B12C29DA5EBB00774A44 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = CB73D392290E3B4A00C12538 /* Products */;
 			projectDirPath = "";
@@ -224,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBCDFAFE291144DA001F1CF1 /* DetailViewController.swift in Sources */,
+				9154B12B29DA5E6E00774A44 /* DetailCell.swift in Sources */,
 				CB73D399290E3B4A00C12538 /* LoginViewController.swift in Sources */,
 				CB73D395290E3B4A00C12538 /* AppDelegate.swift in Sources */,
 				CB6997532911354B007EDA6B /* CreationViewController.swift in Sources */,
@@ -452,6 +460,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9154B12C29DA5EBB00774A44 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = exactVersion;
+				version = 9.6.1;
+			};
+		};
 		CB7896EA2935A3D500635932 /* XCRemoteSwiftPackageReference "Parse-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/parse-community/Parse-Swift";
@@ -471,6 +487,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9154B12D29DA5EBB00774A44 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9154B12C29DA5EBB00774A44 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
 		CB7896EB2935A3D500635932 /* ParseSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CB7896EA2935A3D500635932 /* XCRemoteSwiftPackageReference "Parse-Swift" */;

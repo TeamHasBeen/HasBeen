@@ -10,6 +10,8 @@ Unit 7: Group Milestone - README
 1. [Schema](#Schema)
 1. [Sprint 1 Summary](#Sprint-1-Summary)
 1. [Sprint 1 Walkthrough Gif](#Sprint-1-Walkthrough-GIF)
+1. [Sprint 2 Summary](#Sprint-2-Summary)
+1. [Sprint 2 Walkthrough Gif](#Sprint-2-Walkthrough-GIF)
 
 
 ## Overview
@@ -241,7 +243,13 @@ HasBeen is a random adventure generator for users searching for things to do nea
     `GET`    | /textsearch/json?query="place_name" | return placeID
 
 ## Sprint 1 Summary
-For this sprint we we laid the groundwork of our app and implemented the login, logout, and signup features. We also made a few design changes and planned out our next sprint.
+For this sprint we laid the groundwork of our app and implemented the login, logout, and signup features. We also made a few design changes and planned out our next sprint.
 
 ## Sprint 1 Walkthrough GIF
 ![](sprint-1-walkthrough.gif)
+
+## Sprint 2 Summary
+For this sprint we continued working on our app by adding the destination detail view and the stream view (favorites). Next sprint we are going to add hotel, restaurant, and map views as well as touch up some of the design features.
+
+## Sprint 2 Walkthrough GIF
+![](sprint-2-walkthrough.gif)

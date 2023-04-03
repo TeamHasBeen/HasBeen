@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -359,12 +360,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorites Yet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOE-z5-uWX">
+                                <rect key="frame" x="0.0" y="405.33333333333331" width="390" height="33.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TbD-xR-cAj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TbD-xR-cAj" firstAttribute="trailing" secondItem="pOE-z5-uWX" secondAttribute="trailing" id="B02-kS-orA"/>
+                            <constraint firstItem="pOE-z5-uWX" firstAttribute="leading" secondItem="TbD-xR-cAj" secondAttribute="leading" id="PBf-Je-F3k"/>
+                            <constraint firstItem="pOE-z5-uWX" firstAttribute="centerY" secondItem="Dxc-2h-m8N" secondAttribute="centerY" id="dti-s8-DOq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hUr-Qn-1CX"/>
                     <connections>
+                        <outlet property="noDestinationsLabel" destination="pOE-z5-uWX" id="ZML-Mz-DnS"/>
                         <outlet property="tableView" destination="6Su-kg-DNS" id="n70-aS-GjX"/>
                     </connections>
                 </viewController>
@@ -381,6 +394,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="bVn-Qw-Idz"/>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eQy-xs-m2g">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -517,7 +531,7 @@
                                         <connections>
                                             <outlet property="placeAddress" destination="9aC-RC-aCq" id="aKh-t4-Ihn"/>
                                             <outlet property="placeName" destination="Zj9-zX-F07" id="6xY-RG-fCY"/>
-                                            <segue destination="8dZ-TL-zUn" kind="show" id="Jfc-b4-yk5"/>
+                                            <segue destination="l1b-Zc-aUF" kind="show" id="me8-gH-LSp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -542,20 +556,35 @@
             <point key="canvasLocation" x="1651" y="2355"/>
         </scene>
         <!--Map View Controller-->
-        <scene sceneID="9rM-jo-cfl">
+        <scene sceneID="KFo-Ds-Tyi">
             <objects>
-                <viewController id="8dZ-TL-zUn" customClass="MapViewController" customModule="HasBeen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Uxe-cu-uVK">
+                <viewController id="l1b-Zc-aUF" customClass="MapViewController" customModule="HasBeen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pjQ-Gt-E6E">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rGO-n4-OoT"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pm3-TA-Div">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uEJ-f1-baJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pm3-TA-Div" firstAttribute="leading" secondItem="uEJ-f1-baJ" secondAttribute="leading" id="4oC-O6-DDz"/>
+                            <constraint firstItem="uEJ-f1-baJ" firstAttribute="trailing" secondItem="pm3-TA-Div" secondAttribute="trailing" id="BnR-8L-nqh"/>
+                            <constraint firstItem="uEJ-f1-baJ" firstAttribute="bottom" secondItem="pm3-TA-Div" secondAttribute="bottom" id="RlM-rM-mli"/>
+                            <constraint firstItem="pm3-TA-Div" firstAttribute="top" secondItem="uEJ-f1-baJ" secondAttribute="top" id="o9r-as-HO7"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FIa-8x-fv7"/>
+                    <navigationItem key="navigationItem" id="C00-cx-sWE"/>
+                    <connections>
+                        <outlet property="mapView" destination="pm3-TA-Div" id="M5p-vM-ePi"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T2e-VJ-oPw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jrm-yM-1hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1651" y="3139"/>
+            <point key="canvasLocation" x="1651" y="3117"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

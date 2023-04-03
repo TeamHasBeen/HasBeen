@@ -2,15 +2,15 @@ import UIKit
 
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var streamTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     private var favoriteDestinations = [Destination]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        streamTableView.delegate = self
-        streamTableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
         print(favoriteDestinations)
 
@@ -36,7 +36,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self?.favoriteDestinations = destinations
                 // Update the table view on the main thread
                 DispatchQueue.main.async {
-                    self?.streamTableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             case .failure(let error):
                 self?.showAlert(description: error.localizedDescription)

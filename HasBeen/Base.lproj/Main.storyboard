@@ -297,7 +297,7 @@
             </objects>
             <point key="canvasLocation" x="254" y="732"/>
         </scene>
-        <!--Stream View Controller-->
+        <!--Favorites-->
         <scene sceneID="FlK-zi-NQs">
             <objects>
                 <viewController id="9yd-tv-Hxr" customClass="StreamViewController" customModule="HasBeen" customModuleProvider="target" sceneMemberID="viewController">
@@ -375,7 +375,7 @@
                             <constraint firstItem="pOE-z5-uWX" firstAttribute="centerY" secondItem="Dxc-2h-m8N" secondAttribute="centerY" id="dti-s8-DOq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hUr-Qn-1CX"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="hUr-Qn-1CX"/>
                     <connections>
                         <outlet property="noDestinationsLabel" destination="pOE-z5-uWX" id="ZML-Mz-DnS"/>
                         <outlet property="tableView" destination="6Su-kg-DNS" id="n70-aS-GjX"/>
@@ -593,7 +593,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Q9u-yG-Lgf"/>
-        <segue reference="Oej-PN-LZz"/>
+        <segue reference="lSw-S5-hKQ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>

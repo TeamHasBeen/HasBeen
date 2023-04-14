@@ -19,9 +19,11 @@ class DetailTabBarController: UITabBarController, UITabBarControllerDelegate {
         if let viewControllers = self.viewControllers {
             // Replace the existing view controllers with the updated array
             viewControllers[1].tabBarItem = UITabBarItem(title: "Food", image: UIImage(systemName: "fork.knife.circle"), tag: 1)
-            (viewControllers[1] as! PlaceViewController).type = "Restaurants"
+            (viewControllers[1] as! PlaceViewController).type = "restaurants"
             viewControllers[2].tabBarItem = UITabBarItem(title: "Sleep", image: UIImage(systemName: "bed.double.circle"), tag: 2)
-            (viewControllers[2] as! PlaceViewController).type = "Hotels"
+            (viewControllers[2] as! PlaceViewController).type = "hotels"
+            viewControllers[3].tabBarItem = UITabBarItem(title: "See", image: UIImage(systemName: "building.columns.circle"), tag: 3)
+            (viewControllers[3] as! PlaceViewController).type = "points+of+interest"
             
             // Pass the destination object to each view controller and set their titles
             for viewController in viewControllers {
@@ -79,6 +81,10 @@ class DetailTabBarController: UITabBarController, UITabBarControllerDelegate {
         else if viewController == self.viewControllers?[2] {
             print("Second tab selected")
             self.title = "Hotels"
+        }
+        else if viewController == self.viewControllers?[3] {
+            print("Third tab selected")
+            self.title = "Sightseeing"
         }
 
     }

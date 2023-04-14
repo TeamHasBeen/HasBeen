@@ -14,8 +14,6 @@ class PlaceViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
         self.tableView.dataSource = self
         
-        self.navigationItem.title = "Hello"
-        
         activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.center = view.center
         view.addSubview(activityIndicator)

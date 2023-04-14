@@ -33,10 +33,36 @@ class DetailTabBarController: UITabBarController, UITabBarControllerDelegate {
                 // Add more cases if you have more view controllers
             }
         }
+        
+        if let currentUser = User.current, let selectedDestination = destination {
+                isFavoriteDestination(user: currentUser, destination: selectedDestination) { isFavorite in
+                    DispatchQueue.main.async {
+                        let imageName = isFavorite ? "heart.fill" : "heart"
+                        self.favoriteButton.image = UIImage(systemName: imageName)
+                    }
+                }
+            }
     }
 
     @IBAction func didTapFavorite(_ sender: Any) {
         // Code to save favorites goes here
+        if let currentUser = User.current, let selectedDestination = destination {
+            // Check if the destination is in the user's favorites
+            isFavoriteDestination(user: currentUser, destination: selectedDestination) { isFavorite in
+                if isFavorite {
+                    // Remove the destination from favorites and update the button's image
+                    self.removeFavorite(user: currentUser, destination: selectedDestination)
+                    self.favoriteButton.image = UIImage(systemName: "heart")
+                } else {
+                    // Add the destination to favorites and update the button's image
+                    self.addFavorite(user: currentUser, destination: selectedDestination)
+                    self.favoriteButton.image = UIImage(systemName: "heart.fill")
+                }
+            }
+        } else {
+            // Handle the case where either user or destination is nil
+            print("User or destination is nil")
+        }
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
@@ -51,10 +77,83 @@ class DetailTabBarController: UITabBarController, UITabBarControllerDelegate {
 
         }
         else if viewController == self.viewControllers?[2] {
-            print("Third tab selected")
+            print("Second tab selected")
             self.title = "Hotels"
         }
 
+    }
+    
+    private func isFavoriteDestination(user: User, destination: Destination, completion: @escaping (Bool) -> Void) {
+        do {
+            let query = try UserDestination.query("user" == Pointer(user))
+
+            query.find { result in
+                switch result {
+                case .success(let favorites):
+                    let destinations = favorites.map { $0.destination?.toObject() }
+                    var isFavorite = false
+                    for dest in destinations {
+                        if dest?.objectId == destination.objectId {
+                            isFavorite = true
+                            break
+                        }
+                    }
+                    completion(isFavorite)
+                case .failure(let error):
+                    print("Error fetching favorites: \(error.localizedDescription)")
+                    completion(false)
+                }
+            }
+        } catch let error {
+            print("Error: \(error)")
+        }
+    }
+    
+    private func addFavorite(user: User, destination: Destination) {
+        var favorite = UserDestination()
+        do {
+            favorite.user = try Pointer(user)
+        } catch let error {
+            print("Error: \(error)")
+        }
+        do {
+            favorite.destination = try Pointer(destination)
+        } catch let error{
+            print("Error: \(error)")
+        }
+        favorite.save { result in
+            switch result {
+            case .success:
+                print("Successfully added favorite")
+            case .failure(let error):
+                print("Error adding favorite: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func removeFavorite(user: User, destination: Destination) {
+        do {
+            let query = try UserDestination.query("user" == user, "destination" == destination)
+            
+            query.first { result in
+                switch result {
+                case .success(let favorite):
+                    favorite.delete { result in
+                        switch result {
+                        case .success:
+                            print("Successfully removed favorite")
+                        case .failure(let error):
+                            print("Error removing favorite: \(error.localizedDescription)")
+                        }
+                    }
+                case .failure(let error):
+                    print("Error fetching favorite to delete: \(error.localizedDescription)")
+                }
+            }
+        } catch let error {
+            print("Error: \(error)")
+        }
+        
     }
 
     /*

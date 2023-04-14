@@ -4,6 +4,11 @@ class PlaceCell: UITableViewCell {
     
     @IBOutlet weak var placeName: UILabel!
     @IBOutlet weak var placeAddress: UILabel!
+    
+    func configure(with place: Place) {
+        self.placeName.text = place.name
+        self.placeAddress.text = place.formattedAddress
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
